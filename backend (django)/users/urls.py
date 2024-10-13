@@ -1,8 +1,7 @@
 # users/urls.py
 from django.urls import path
-from .views import CustomAuthToken
+from .views import register
 
 urlpatterns = [
-    path('login/', CustomAuthToken.as_view(), name='api_token_auth'),
-    # Add registration endpoint
+    path('register/', register, name='register'),
 ]

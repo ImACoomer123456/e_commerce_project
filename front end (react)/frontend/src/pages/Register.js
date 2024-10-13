@@ -11,7 +11,8 @@ function Register() {
     e.preventDefault();
     axios.post('http://127.0.0.1:8000/api/auth/register/', { username, email, password })
       .then(response => {
-        // Handle successful registration, redirect to login, etc.
+        // Store token in localStorage or any other state management
+        localStorage.setItem('token', response.data.token);
         alert('Registration successful!');
       })
       .catch(error => {
